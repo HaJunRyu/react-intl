@@ -3,6 +3,7 @@ import './App.css';
 import { FormattedMessage, IntlProvider } from 'react-intl';
 import { useState } from 'react';
 import locale from './locale';
+import ChangeLanguage from './ChangeLanguage';
 
 function App() {
   const [lang, setLang] = useState('en');
@@ -14,42 +15,19 @@ function App() {
           <p>
             <FormattedMessage id="reactMessage" />
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          <button
-            onClick={() => {
-              setLang('en');
-            }}
-          >
+
+          <ChangeLanguage setLang={setLang} lang="en">
             English
-          </button>
-          <button
-            onClick={() => {
-              setLang('kr');
-            }}
-          >
+          </ChangeLanguage>
+          <ChangeLanguage setLang={setLang} lang="kr">
             한국어
-          </button>
-          <button
-            onClick={() => {
-              setLang('ch');
-            }}
-          >
+          </ChangeLanguage>
+          <ChangeLanguage setLang={setLang} lang="ch">
             中国人
-          </button>
-          <button
-            onClick={() => {
-              setLang('be');
-            }}
-          >
+          </ChangeLanguage>
+          <ChangeLanguage setLang={setLang} lang="be">
             Tiếng Việt
-          </button>
+          </ChangeLanguage>
         </header>
       </div>
     </IntlProvider>
